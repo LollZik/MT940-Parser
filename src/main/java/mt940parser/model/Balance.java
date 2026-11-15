@@ -16,9 +16,6 @@ public record Balance(DebitCredit mark, LocalDate date, Currency currency, BigDe
     }
 
     public BigDecimal signedAmount() {
-        return switch (mark) {
-            case CREDIT -> amount;
-            case DEBIT -> amount.negate();
-        };
+        return mark.applyTo(amount);
     }
 }
