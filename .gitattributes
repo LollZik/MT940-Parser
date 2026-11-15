@@ -1,0 +1,2 @@
+# Test MT940 files intentionally use different line endings and encodings, git shouldn't change them
+*.sta -text
