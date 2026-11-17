@@ -6,7 +6,7 @@
 
     <groupId>mt940parser</groupId>
     <artifactId>mt940-parser</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.release>25</maven.compiler.release>
@@ -20,5 +20,22 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <build>
+        <finalName>mt940-parser</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>mt940parser.cli.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
